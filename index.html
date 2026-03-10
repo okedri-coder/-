@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>בנק המשימות והחלומות</title>
+    <style>
+        body { background: radial-gradient(circle at top, #1e293b 0%, #020617 100%); }
+        .gold-glow { box-shadow: 0 0 20px rgba(249, 115, 22, 0.4); }
+        /* אפקט לחיצה לכפתורי הילדים */
+        .kid-btn { transition: all 0.1s; border-bottom: 8px solid #9a3412; }
+        .kid-btn:active { transform: translateY(4px); border-bottom-width: 4px; }
+        
+        /* עיצוב הלוגו המוטמע */
+        .app-logo {
+            max-width: 280px;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.1));
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-white min-h-screen p-4 font-sans text-right border-t-8 border-orange-500">
+    <div id="app" class="max-w-md mx-auto">
+        
+        <div id="main-screen" class="text-center mt-6">
+            <div class="flex justify-center mb-6">
+                <img src="data:image/png;base64,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7f5G+vf65//r7/j7/u4u7/P/+H/8f5ff5e/97b//O/4p/14uIuI/N/OdxOf5m36OP+vXef6uX+f5u7N7/t6cz787fP6uvM7vPzM+7//T2//K133+/m8R8dfNfM//R8Rfb/R782f/U9v+57+Yv057/0X95//Xf///4X/+bX9/q/9//v8fUX9/m//9/+v/79/5P/87/4//+98R8f98L59v7//mP+vfx69bXn8X/5b5833446X78M4734533vlVvPNOP5//r5P/Xf4//h//X/v//L998e9//b8v/itv8v/y//Xfx+/5//v5//vfxT8f///jE/7rv/x/R8S/7vB9f+i/u8X/9X9H+N//D/+vPyN/6X5E7p/8X/77I/I7f+T35Gv6//1D/u4U/4u/7oj+W//Xv4//7X9X//M7df859Uf//In+Sfx76X/9V//3/7f/b//9pX8fX//y//Xf9S8//7L4b//P/+2L+O/9X/8X//+/9K/9S3/+/Wv6n/4v+f97/v/m6Z//D/+v//L//P/9V9b/X/w5///l9X738b87Uv09//f/pX8f/+X//ff/8r//X/7rv9q//X/9H///W7b/+N/f5Of8b3/N30XEHCIREUBUExH7T+TPIXnsX5963ZOvWfG5U8rvefJ7Pvf4XfF7PH6P/f5WvO/7iXf0U745Ie/5mP7p49/Z8ffU+I8Tf+/Iu536vCf/r9UvP7fK97V4T6v+Z6uep49H/b0n73L/ntWf9+S78vd2yWv4POf6j/y7O6Rff4f++Z58vUf+D/85pL6K/N0hOd5B6j+C6p/N7+qI6j8i+jOf744o//tT/e8S+W//u0P63+nUv6Of8m3pT/S/45SfnJLff6Z+qKqPTPV/Vv9r6h//p//+/438/i7/3pX/m9O/r5T/vT4m/+9D6nv+8y7/rvg/TfL3+H/6/0f9b3Xid/f4f7vjf+4c/3uI/39/Yp/+X8H/+X44///n4p9/77f98yL57yLymP84/T369W8+j1v+/4j/7tAf/+5o/T/+S/5/u9f5r/m8TUT5tD4nPudj+n/K//pL4vfx/77+U//8G//8q///N/35X/O+v+/wX/4e/w7/+/l7K/+XPfHz//bFvx8Rf8vvfV7X55N7mH//2L+niMhkfL6P33N87mS6i6nOReR+R//pTnyunY7/53P6f0u+v+/18//b/fO35WfxH//Hj8Uf/w//7P+M/5Y/R+/+H3y69S/Xv3f/fP//t/79Y/m7b9Wft/995Ndt/t//93/9H//779R//mP+ff/f/5f/fR/5/2P/4p995D8B/gI+Bv7H/wfP+O7v5TP7eQAAAABJRU5ErkJggg==" 
+                     alt="בנק המשימות והחלומות" 
+                     class="app-logo">
+            </div>
+            
+            <div id="kids-list" class="grid grid-cols-2 gap-4 mt-8"></div>
+            
+            <button onclick="showScreen('login-screen')" class="w-full mt-10 bg-slate-800 p-4 rounded-2xl font-bold border border-slate-700 hover:bg-slate-700 transition shadow-lg flex items-center justify-center gap-2">
+                <span>⚙️ לוח בקרה הורה</span>
+            </button>
+        </div>
+
+        <div id="login-screen" class="hidden text-center mt-20 space-y-6">
+            <h2 class="text-3xl font-black text-orange-400">כניסת הורה</h2>
+            <p class="text-slate-400">הזן קוד גישה</p>
+            <input type="password" id="pin-input" inputmode="numeric" maxlength="8" class="bg-slate-800 text-center text-5xl p-4 rounded-2xl border-2 border-slate-700 w-48 tracking-widest focus:border-orange-500 outline-none gold-glow">
+            <div class="flex gap-2 justify-center">
+                <button onclick="verifyPIN()" class="bg-orange-600 px-8 py-3 rounded-xl font-bold text-lg hover:bg-orange-500">כניסה</button>
+                <button onclick="showScreen('main-screen')" class="bg-slate-700 px-8 py-3 rounded-xl font-bold text-lg">ביטול</button>
+            </div>
+            <p id="login-error" class="text-red-500 font-bold hidden">❌ קוד שגוי</p>
+        </div>
+
+        <div id="parent-panel" class="hidden space-y-4">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-2">
+                <h2 class="text-2xl font-bold text-orange-400 font-black">⚙️ ניהול כללי</h2>
+                <button onclick="showScreen('change-pin-screen')" class="text-xs bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700 text-slate-400">🔑 שנה קוד</button>
+            </div>
+            
+            <section class="bg-slate-900 p-4 rounded-2xl shadow-xl border border-white/5">
+                <h3 class="font-bold mb-3 text-blue-300">👦 ילדים</h3>
+                <div id="manage-kids-list" class="space-y-2 mb-3"></div>
+                <div class="flex gap-2">
+                    <input id="newChildName" class="flex-1 bg-slate-800 p-2 rounded-xl text-sm border border-slate-700" placeholder="שם ילד חדש">
+                    <button onclick="addChild()" class="bg-blue-600 px-4 rounded-xl font-bold">+</button>
+                </div>
+            </section>
+
+            <div class="grid grid-cols-2 gap-4">
+                <section class="bg-slate-900 p-3 rounded-2xl border border-white/5 text-center">
+                    <h3 class="font-bold text-green-400 text-xs mb-2">✅ משימות</h3>
+                    <div id="manage-tasks-list" class="space-y-1 mb-2 max-h-32 overflow-y-auto text-[10px]"></div>
+                    <input id="tn" placeholder="שם" class="w-full bg-slate-800 p-1 rounded text-xs mb-1">
+                    <input id="tp" type="number" placeholder="₪" class="w-full bg-slate-800 p-1 rounded text-xs mb-1">
+                    <button onclick="addTask()" class="w-full bg-green-700 py-1 rounded text-xs font-bold">הוסף</button>
+                </section>
+                <section class="bg-slate-900 p-3 rounded-2xl border border-white/5 text-center">
+                    <h3 class="font-bold text-purple-400 text-xs mb-2">🛍️ חנות</h3>
+                    <div id="manage-shop-list" class="space-y-1 mb-2 max-h-32 overflow-y-auto text-[10px]"></div>
+                    <input id="sn" placeholder="שם" class="w-full bg-slate-800 p-1 rounded text-xs mb-1">
+                    <input id="sp" type="number" placeholder="₪" class="w-full bg-slate-800 p-1 rounded text-xs mb-1">
+                    <button onclick="addShop()" class="w-full bg-purple-700 py-1 rounded text-xs font-bold">הוסף</button>
+                </section>
+            </div>
+            <button onclick="showScreen('main-screen')" class="w-full bg-slate-800 py-3 rounded-2xl font-bold border border-slate-700 mt-4">⬅️ חזרה למסך ראשי</button>
+        </div>
+
+        <div id="profile-panel" class="hidden space-y-4">
+            <h2 id="profile-name" class="text-3xl font-black text-orange-400 text-center"></h2>
+            <div class="text-center bg-slate-900 p-8 rounded-3xl border border-orange-500/20 shadow-2xl">
+                <p class="text-slate-400 text-sm font-bold uppercase">יתרה נוכחית</p>
+                <div id="profile-bal" class="text-5xl font-black text-white my-3">0 ₪</div>
+                <hr class="border-slate-800 my-4">
+                <input type="number" id="amount-to-change" inputmode="numeric" placeholder="סכום לשינוי" class="w-full bg-slate-800 text-center text-3xl p-4 rounded-2xl border border-slate-700 focus:border-orange-500 outline-none mb-4">
+                <div class="flex gap-3">
+                    <button onclick="changeBalManual('minus')" class="flex-1 bg-red-600 py-3 rounded-xl font-bold text-lg shadow-lg active:scale-95 transition-transform">החסר (-)</button>
+                    <button onclick="changeBalManual('plus')" class="flex-1 bg-green-600 py-3 rounded-xl font-bold text-lg shadow-lg active:scale-95 transition-transform">הוסף (+)</button>
+                </div>
+            </div>
+            <h3 class="font-bold text-slate-400">📜 היסטוריה:</h3>
+            <div id="history-list" class="bg-slate-900 p-4 rounded-2xl h-40 overflow-y-auto text-sm border border-slate-800"></div>
+            <div class="flex gap-2">
+                <button onclick="deleteChild()" class="flex-1 bg-red-900/30 p-3 rounded-xl text-red-400 font-bold border border-red-900/30">מחק ילד</button>
+                <button onclick="showScreen('parent-panel')" class="flex-1 bg-slate-800 p-3 rounded-xl font-bold">חזרה</button>
+            </div>
+        </div>
+
+        <div id="child-panel" class="hidden">
+            <div class="text-center mb-6">
+                <h2 id="child-title" class="text-3xl font-black"></h2>
+                <div id="child-bal" class="text-6xl font-black text-orange-400 my-4 drop-shadow-lg">0 ₪</div>
+            </div>
+            <div class="flex gap-2 mb-6">
+                <button onclick="renderChildView('tasks')" class="flex-1 bg-green-700 py-4 rounded-2xl font-black text-lg shadow-lg active:translate-y-1 transition-all">✅ משימות</button>
+                <button onclick="renderChildView('shop')" class="flex-1 bg-purple-700 py-4 rounded-2xl font-black text-lg shadow-lg active:translate-y-1 transition-all">🛍️ חנות</button>
+            </div>
+            <div id="view-title" class="text-3xl font-black mb-4 text-center underline decoration-4 underline-offset-8"></div>
+            <div id="child-content" class="min-h-[250px] space-y-3 pb-20"></div>
+            <button onclick="showScreen('main-screen')" class="w-full mt-6 text-slate-500 underline font-bold text-center block">❌ יציאה</button>
+        </div>
+
+        <div id="change-pin-screen" class="hidden text-center mt-20 space-y-6 bg-slate-900 p-8 rounded-3xl border border-slate-800">
+            <h2 class="text-2xl font-black text-orange-400">🔑 שינוי קוד הורה</h2>
+            <input type="password" id="new-pin-input" inputmode="numeric" maxlength="8" placeholder="קוד חדש" class="bg-slate-800 text-center text-4xl p-5 rounded-2xl border-2 border-slate-700 w-full outline-none focus:border-orange-500 gold-glow">
+            <div class="flex gap-2">
+                <button onclick="saveNewPIN()" class="flex-1 bg-orange-600 py-3 rounded-xl font-bold font-lg shadow-lg">שמור</button>
+                <button onclick="showScreen('parent-panel')" class="flex-1 bg-slate-700 py-3 rounded-xl font-bold font-lg">ביטול</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // בסיס נתונים - ה-PIN תמיד יוגדר כ-1234 אם אין ערך קיים
+        let db = JSON.parse(localStorage.getItem('dreamBankDB')) || { 
+            kids: [], tasks: [], shop: [], parentPIN: "1234" 
+        };
+        // וידוא שה-PIN קיים (למקרה שהתחלתם עם גרסה קודמת)
+        if (!db.parentPIN) db.parentPIN = "1234";
+
+        let currentIdx = null;
+
+        function save() { localStorage.setItem('dreamBankDB', JSON.stringify(db)); }
+
+        function showScreen(id) {
+            ['main-screen', 'login-screen', 'parent-panel', 'profile-panel', 'child-panel', 'change-pin-screen'].forEach(s => {
+                const el = document.getElementById(s);
+                if (el) el.classList.add('hidden');
+            });
+            document.getElementById(id).classList.remove('hidden');
+            if (id === 'parent-panel') renderManage();
+            if (id === 'login-screen') {
+                document.getElementById('pin-input').value = '';
+                document.getElementById('login-error').classList.add('hidden');
+                setTimeout(() => document.getElementById('pin-input').focus(), 100);
+            }
+        }
+
+        // אבטחת הורה
+        function verifyPIN() {
+            const input = document.getElementById('pin-input').value.trim();
+            if (input === db.parentPIN.toString().trim()) {
+                showScreen('parent-panel');
+            } else {
+                document.getElementById('login-error').classList.remove('hidden');
+                document.getElementById('pin-input').value = '';
+            }
+        }
+
+        function saveNewPIN() {
+            const newPIN = document.getElementById('new-pin-input').value.trim();
+            if (newPIN.length > 0) {
+                db.parentPIN = newPIN;
+                save();
+                showScreen('parent-panel');
+            }
+        }
+
+        // ניהול תוכן
+        function addChild() { 
+            let n = document.getElementById('newChildName').value;
+            if(n) { db.kids.push({name:n, balance:0, history:[]}); save(); document.getElementById('newChildName').value=''; renderManage(); renderMain(); }
+        }
+        function addTask() {
+            let n = document.getElementById('tn'), p = document.getElementById('tp');
+            if(n.value && p.value) { db.tasks.push({name: n.value, price: parseInt(p.value)}); save(); n.value=''; p.value=''; renderManage(); }
+        }
+        function addShop() {
+            let n = document.getElementById('sn'), p = document.getElementById('sp');
+            if(n.value && p.value) { db.shop.push({name: n.value, price: parseInt(p.value)}); save(); n.value=''; p.value=''; renderManage(); }
+        }
+
+        function renderManage() {
+            document.getElementById('manage-kids-list').innerHTML = db.kids.map((k,i) => `
+                <div class="flex justify-between items-center bg-slate-800 p-3 rounded-xl border border-slate-700 shadow-sm">
+                    <span class="font-bold text-lg">${k.name}</span>
+                    <button onclick="renderProfile(${i})" class="bg-blue-600 px-4 py-1 rounded-lg text-xs font-bold shadow-md hover:bg-blue-500 transition">פרופיל ויתרה</button>
+                </div>`).join('');
+            document.getElementById('manage-tasks-list').innerHTML = db.tasks.map((t,i) => `<div class="flex justify-between bg-slate-800 p-1 px-2 rounded text-[10px] mb-1"><span>${t.name}</span><button onclick="db.tasks.splice(${i},1);save();renderManage()" class="text-red-500 font-bold text-xs">X</button></div>`).join('');
+            document.getElementById('manage-shop-list').innerHTML = db.shop.map((s,i) => `<div class="flex justify-between bg-slate-800 p-1 px-2 rounded text-[10px] mb-1"><span>${s.name}</span><button onclick="db.shop.splice(${i},1);save();renderManage()" class="text-red-500 font-bold text-xs">X</button></div>`).join('');
+        }
+
+        function renderProfile(i) {
+            currentIdx = i;
+            document.getElementById('profile-name').innerText = "ניהול: " + db.kids[i].name;
+            document.getElementById('profile-bal').innerText = db.kids[i].balance + " ₪";
+            document.getElementById('amount-to-change').value = '';
+            document.getElementById('history-list').innerHTML = db.kids[i].history.map(h => `<div class="bg-slate-800 p-2 rounded mb-1 border-r-2 border-orange-500 text-xs">${h}</div>`).join('') || "אין היסטוריה";
+            showScreen('profile-panel');
+        }
+
+        function changeBalManual(action) {
+            let amount = parseInt(document.getElementById('amount-to-change').value);
+            if (isNaN(amount) || amount <= 0) { alert("הזן סכום תקין"); return; }
+            if (action === 'minus') amount = -amount;
+            db.kids[currentIdx].balance += amount;
+            db.kids[currentIdx].history.unshift(`${new Date().toLocaleTimeString('he-IL', {hour:'2-digit', minute:'2-digit'})} - עריכה ידנית: ${amount > 0 ? '+' : ''}${amount}₪`);
+            save(); renderProfile(currentIdx); renderMain();
+        }
+
+        function deleteChild() { if(confirm("למחוק לצמיתות את החשבון של " + db.kids[currentIdx].name + "?")) { db.kids.splice(currentIdx,1); save(); showScreen('parent-panel'); renderMain(); } }
+
+        // --- פאנל ילד ---
+        function openChild(i) {
+            currentIdx = i;
+            document.getElementById('child-title').innerText = "שלום " + db.kids[i].name;
+            updateChildUI();
+            renderChildView('tasks');
+            showScreen('child-panel');
+        }
+        function updateChildUI() { document.getElementById('child-bal').innerText = db.kids[currentIdx].balance + " ₪"; }
+        function renderChildView(type) {
+            const titleEl = document.getElementById('view-title');
+            if(type === 'tasks') { titleEl.innerText = "✅ משימות"; titleEl.className = "text-4xl font-black mb-6 text-center text-green-400 underline decoration-green-600 decoration-4 underline-offset-8 transition-all"; }
+            else { titleEl.innerText = "🛍️ חנות"; titleEl.className = "text-4xl font-black mb-6 text-center text-purple-400 underline decoration-purple-600 decoration-4 underline-offset-8 transition-all"; }
+            let list = type === 'tasks' ? db.tasks : db.shop;
+            document.getElementById('child-content').innerHTML = list.map(item => `
+                <button onclick="${type==='tasks'?'earn':'buy'}(${item.price},'${item.name}')" class="w-full bg-slate-900 p-6 rounded-[2rem] flex justify-between items-center font-bold border-b-4 border-slate-800 active:translate-y-2 active:border-b-0 transition-all duration-75 shadow-xl">
+                    <span class="text-xl">${item.name}</span><span class="${type==='tasks'?'text-green-400':'text-purple-400'} text-2xl font-black">${item.price}₪</span>
+                </button>`).join('') || "ריק כרגע...";
+        }
+
+        function earn(p, n) { db.kids[currentIdx].balance += p; db.kids[currentIdx].history.unshift(`${new Date().toLocaleTimeString('he-IL', {hour:'2-digit', minute:'2-digit'})} - הושלם: ${n} (+${p}₪)`); save(); updateChildUI(); }
+        function buy(p, n) { if(db.kids[currentIdx].balance >= p) { db.kids[currentIdx].balance -= p; db.kids[currentIdx].history.unshift(`${new Date().toLocaleTimeString('he-IL', {hour:'2-digit', minute:'2-digit'})} - קנייה: ${n} (-${p}₪)`); save(); updateChildUI(); } else { alert("חסר לך כסף! בצע עוד משימות 💪"); } }
+        
+        function renderMain() {
+            document.getElementById('kids-list').innerHTML = db.kids.map((k,i) => `<button onclick="openChild(${i})" class="kid-btn bg-orange-600 py-12 rounded-[2.5rem] font-black text-3xl shadow-lg border-2 border-orange-400/30">${k.name}</button>`).join('');
+        }
+        renderMain();
+    </script>
+</body>
+</html>
